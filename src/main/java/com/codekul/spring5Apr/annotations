@@ -1,2 +1,6 @@
 1. @Configuration
 	- indicates that this class is a configuration class
+
+2. @ComponentScan
+3. @Component
+4. @Bean

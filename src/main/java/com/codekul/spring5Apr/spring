@@ -76,6 +76,16 @@ IoC Container
 	2. Annotation based
 	3. Java Based
 
+Bean :
+	- an object in Spring
+	- managed by IoC
+Spring Bean Scopes :
+	1. Singleton(default) - single bean instance per IoC
+	2. Prototype - new bean instance is created every time a bean requested
+	3. Request - a bean instance is created to an HTTP request
+	4. Session - a bean instance is created to an HTTP session
+	5. global-session - global to HTTP session
+
 Dependency Injection(DI)
 	- main functionality provided by IoC
 	- responsible for injecting dependencies thro' either constructor or setter method
