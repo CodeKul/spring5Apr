@@ -87,11 +87,14 @@ Spring Bean Scopes :
 	5. global-session - global to HTTP session
 
 Dependency Injection(DI)
+	- design pattern that implements IoC
 	- main functionality provided by IoC
+	- injecting the dependency object to the dependent object
 	- responsible for injecting dependencies thro' either constructor or setter method
 	- connecting the objects with other objects or injecting objects into other objects
-	- Ways     1. Constructor Dependency Injection (CDI)
-               2. Setter Dependency Injection (SDI)
+	- Ways     1. Constructor based Dependency Injection (CDI)
+               2. Setter based Dependency Injection (SDI)
+               3. Property based Dependency Injection
 
 
 @Configuration
@@ -101,6 +104,7 @@ pom.xml
 	- contains information about the project & configuration details used by maven to build the project
 	- when executing the task,maven looks for the pom file in current directory
 	- maven reads the POM, gets the needed configuration details,then executes the task
+
 Spring Boot
 - advanced concept of Spring framework
 - is it built on the top of the Spring framework

@@ -4,3 +4,6 @@
 2. @ComponentScan
 3. @Component
 4. @Bean
+5. @Autowired
+	- used for automatic dependency injection
+	- internally uses setters or constructor injection
