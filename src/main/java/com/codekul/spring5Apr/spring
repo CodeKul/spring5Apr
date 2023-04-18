@@ -107,10 +107,16 @@ pom.xml
 
 Spring Boot
 - advanced concept of Spring framework
+- extension of spring framework
 - is it built on the top of the Spring framework
 - create a standalone Spring-Based application
 - provides RAD(Rapid Application Development) feature
-Restful
+
+Features
+1. Spring Boot Starters
+2. AutoConfiguration
+3. Actuator
+4. Embedded Servlet
 
 
 How Spring Boot application works internally?
@@ -118,8 +124,7 @@ How Spring Boot application works internally?
  - main method calls the run method(static)
  - application context searches for the classes annotated with @Configuration
     & initializes all the declared beans in those configuration classes
- - based on scope of those beans, stores those beans in JVM
- - specifically in IoC container
+ - based on scope of those beans, stores those beans in JVM specifically in IoC container
  - after creation of all beans,automatically configures dispatch servlet
  - register the default handler mappings
 

@@ -7,3 +7,5 @@
 5. @Autowired
 	- used for automatic dependency injection
 	- internally uses setters or constructor injection
+6. @RestController
+7. 	@GetMapping
