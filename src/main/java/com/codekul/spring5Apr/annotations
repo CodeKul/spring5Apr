@@ -1,11 +1,24 @@
 1. @Configuration
 	- indicates that this class is a configuration class
+	- a class marked with this annotation is a source of the bean definitions
 
 2. @ComponentScan
+	- scan the packages configured with it for the @Configuration class
 3. @Component
+	 - declare a bean is to mark with @Component
+	 - creates a class into Spring bean at auto-scan
 4. @Bean
+	- method level annotation
+	- creates a bean
+	- bean producer
+	- managed by spring context
 5. @Autowired
 	- used for automatic dependency injection
 	- internally uses setters or constructor injection
 6. @RestController
-7. 	@GetMapping
+7. @GetMapping
+8. @SpringBootApplication
+	- combined @Configuration,@ComponentScan & @EnableAutoConfiguration
+
+9. @EnableAutoConfiguration
+
