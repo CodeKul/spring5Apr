@@ -21,4 +21,6 @@
 	- combined @Configuration,@ComponentScan & @EnableAutoConfiguration
 
 9. @EnableAutoConfiguration
+10. @Service
 
+10.     @GetMapping

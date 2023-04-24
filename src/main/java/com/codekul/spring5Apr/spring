@@ -137,6 +137,7 @@ spring-boot-devtools
 
 spring-boot-starter-jdbc
 	- for communicating with the database
+	- configures datasource bean
 
 lombok
 	- a java library that will reduce the boilerplate code
