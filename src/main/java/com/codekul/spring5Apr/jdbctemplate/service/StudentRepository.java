@@ -1,6 +1,6 @@
 package com.codekul.spring5Apr.jdbctemplate.service;
 
-import com.codekul.spring5Apr.jdbctemplate.entity.Student;
+import com.codekul.spring5Apr.jdbctemplate.model.Student;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

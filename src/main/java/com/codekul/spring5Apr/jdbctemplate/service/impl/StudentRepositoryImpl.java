@@ -1,6 +1,6 @@
 package com.codekul.spring5Apr.jdbctemplate.service.impl;
 
-import com.codekul.spring5Apr.jdbctemplate.entity.Student;
+import com.codekul.spring5Apr.jdbctemplate.model.Student;
 import com.codekul.spring5Apr.jdbctemplate.service.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;

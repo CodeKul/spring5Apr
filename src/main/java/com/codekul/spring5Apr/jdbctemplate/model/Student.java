@@ -1,4 +1,4 @@
-package com.codekul.spring5Apr.jdbctemplate.entity;
+package com.codekul.spring5Apr.jdbctemplate.model;
 
 import lombok.Getter;
 import lombok.Setter;
