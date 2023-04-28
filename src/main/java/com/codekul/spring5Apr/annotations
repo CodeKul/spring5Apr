@@ -24,3 +24,15 @@
 10. @Service
 
 10.     @GetMapping
+11. @PostMapping
+12. @PutMapping
+13. @DeleteMapping
+
+//JPA
+14. @Entity - the class is a persistent Java class
+15. @Table - the table that maps this entity
+16. @Id - primary key
+17. @GeneratedValue -  define generation strategy for the given primary
+18. @Column - define column in db that maps annotated field
+19. @Service
+

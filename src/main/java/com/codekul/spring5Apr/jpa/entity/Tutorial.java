@@ -1,7 +1,12 @@
 package com.codekul.spring5Apr.jpa.entity;
 
-import javax.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.context.annotation.Configuration;
 
+import javax.persistence.*;
+@Getter
+@Setter
 @Entity
 @Table(name = "tutorials")
 public class Tutorial {
@@ -9,5 +14,7 @@ public class Tutorial {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+    @Column(name = "tutorial_description")
     private String description;
+    private String subject;
 }
