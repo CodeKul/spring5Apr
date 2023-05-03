@@ -35,9 +35,19 @@ public class TutorialController {
     public ResponseEntity<?> getById(@PathVariable(value = "id") Long id){
         Tutorial tutorial = tutorialService.getById(id);
         if (tutorial != null){
-            return ResponseEntity.ok(tutorialService.getById(id));
+            return ResponseEntity.ok(tutorial);
         }
         else
             return new ResponseEntity<>("Record with id " +id +" does not exists" ,HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/getByTitle")
+    public ResponseEntity<?> getByTitle(@RequestParam String title){
+        Tutorial tutorial = tutorialService.getTutorialByTitle(title);
+        if (tutorial != null){
+            return ResponseEntity.ok(tutorial);
+        }
+        else
+            return new ResponseEntity<>("Record with title " +title +" does not exists" ,HttpStatus.NOT_FOUND);
     }
 }
