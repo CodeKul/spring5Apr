@@ -40,4 +40,33 @@ public class TutorialServiceImpl implements TutorialService {
     public Tutorial getTutorialByTitle(String title) {
         return tutorialRepository.findByTitle(title).orElse(null);
     }
+
+    @Override
+    public String updateTutorial(TutorialRequestDto requestDto,Long tutorialId) {
+        Optional<Tutorial> optionalTutorial = tutorialRepository.findById(tutorialId);
+        if (optionalTutorial.isPresent()){
+            Tutorial tutorial = optionalTutorial.get();
+            tutorial.setSubject(requestDto.getSubject());
+            tutorial.setDescription(requestDto.getDescription());
+            tutorial.setTitle(requestDto.getTitle());
+            tutorialRepository.save(tutorial);
+            return "Record updated successfully";
+        }
+        return "Record with given id "+tutorialId + " does not exists";
+    }
+
+    @Override
+    public String updateTutorial(Tutorial tutorial) {
+        tutorialRepository.save(tutorial);
+        return "Record updated successfully";
+    }
+
+    @Override
+    public String deleteTutorial(Long tutorialId) {
+        if(tutorialRepository.existsById(tutorialId)) {
+            tutorialRepository.deleteById(tutorialId);
+            return "Record deleted successfully";
+        }
+        return "Record with given id "+tutorialId + " does not exists";
+    }
 }

@@ -50,4 +50,24 @@ public class TutorialController {
         else
             return new ResponseEntity<>("Record with title " +title +" does not exists" ,HttpStatus.NOT_FOUND);
     }
+
+    @PutMapping("/updateTutorial/{tutorialId}")
+    public ResponseEntity<?> updateTutorial(@PathVariable Long tutorialId,
+            @RequestBody TutorialRequestDto requestDto){
+        try {
+            return ResponseEntity.ok(tutorialService.updateTutorial(requestDto, tutorialId));
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body("Something went wrong "+e.getMessage());
+        }
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<?> updateTutorial(@RequestBody Tutorial tutorial){
+        return ResponseEntity.ok(tutorialService.updateTutorial(tutorial));
+    }
+
+    @DeleteMapping("{tutorialId}")
+    public ResponseEntity<?> deleteTutorial(@PathVariable Long tutorialId){
+        return ResponseEntity.ok(tutorialService.deleteTutorial(tutorialId));
+    }
 }

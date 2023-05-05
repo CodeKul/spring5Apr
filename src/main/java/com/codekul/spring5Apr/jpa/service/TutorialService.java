@@ -13,4 +13,10 @@ public interface TutorialService {
     Tutorial getById(Long id);
 
     Tutorial getTutorialByTitle(String title);
+
+    String updateTutorial(TutorialRequestDto requestDto,Long tutorialId);
+
+    String updateTutorial(Tutorial tutorial);
+
+    String deleteTutorial(Long tutorialId);
 }
