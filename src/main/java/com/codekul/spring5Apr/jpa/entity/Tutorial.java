@@ -5,6 +5,8 @@ import lombok.Setter;
 import org.springframework.context.annotation.Configuration;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 @Getter
 @Setter
 @Entity
@@ -13,6 +15,7 @@ public class Tutorial {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull(message = "Title can not be null")
     private String title;
     @Column(name = "tutorial_description")
     private String description;

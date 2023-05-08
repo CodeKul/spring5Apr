@@ -1,7 +1,10 @@
 package com.codekul.spring5Apr.jpa.service.impl;
 
+import com.codekul.spring5Apr.jpa.dto.TutorialDetailsRequestDto;
 import com.codekul.spring5Apr.jpa.dto.TutorialRequestDto;
 import com.codekul.spring5Apr.jpa.entity.Tutorial;
+import com.codekul.spring5Apr.jpa.entity.TutorialDetails;
+import com.codekul.spring5Apr.jpa.repository.TutorialDetailsRepository;
 import com.codekul.spring5Apr.jpa.repository.TutorialRepository;
 import com.codekul.spring5Apr.jpa.service.TutorialService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +17,9 @@ import java.util.Optional;
 public class TutorialServiceImpl implements TutorialService {
     @Autowired
     private TutorialRepository tutorialRepository;
+    @Autowired
+    private TutorialDetailsRepository tutorialDetailsRepository;
+
 
     @Override
     public void saveTutorial(TutorialRequestDto requestDto) {
@@ -21,7 +27,16 @@ public class TutorialServiceImpl implements TutorialService {
         tutorial.setTitle(requestDto.getTitle());
         tutorial.setDescription(requestDto.getDescription());
         tutorial.setSubject(requestDto.getSubject());
-        tutorialRepository.save(tutorial);
+        Tutorial  tutorial1 = tutorialRepository.save(tutorial);
+
+        TutorialDetails tutorialDetails = new TutorialDetails();
+        TutorialDetailsRequestDto details = requestDto.getTutorialDetails();
+        tutorialDetails.setAuthor(details.getAuthor());
+        tutorialDetails.setPublishedOn(details.getPublishedOn());
+        tutorialDetails.setEmail(details.getEmail());
+        tutorialDetails.setMobile(details.getMobile());
+        tutorialDetails.setTutorial(tutorial1);
+        tutorialDetailsRepository.save(tutorialDetails);
     }
 
     @Override

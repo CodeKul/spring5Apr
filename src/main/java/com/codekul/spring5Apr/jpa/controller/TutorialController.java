@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -17,7 +18,7 @@ public class TutorialController {
     private TutorialService tutorialService;
 
     @PostMapping
-    public String saveTutorial(@RequestBody TutorialRequestDto requestDto){
+    public String saveTutorial(@Valid @RequestBody TutorialRequestDto requestDto){
         tutorialService.saveTutorial(requestDto);
         return "Record saved successfully";
     }
