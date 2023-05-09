@@ -24,8 +24,8 @@ public class TutorialDetails {
     @Column(name = "created_by")
     private String author;
 
-    @NotNull(message = "Subject can not be null")
-    @NotBlank(message = "Subject can not be blank")
+    @NotNull(message = "Email can not be null")
+    @NotBlank(message = "Email can not be blank")
     @Email(message = "Email is not valid")
     private String email;
 
