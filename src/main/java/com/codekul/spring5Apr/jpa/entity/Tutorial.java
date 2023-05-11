@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,4 +21,7 @@ public class Tutorial {
     @Column(name = "tutorial_description")
     private String description;
     private String subject;
+
+    @OneToMany(mappedBy = "tutorial",fetch = FetchType.EAGER)
+    private List<Comment> comments;
 }
