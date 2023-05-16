@@ -19,4 +19,6 @@ public interface TutorialService {
     String updateTutorial(Tutorial tutorial);
 
     String deleteTutorial(Long tutorialId);
+
+    void saveTutorialWithTags(Tutorial tutorial);
 }

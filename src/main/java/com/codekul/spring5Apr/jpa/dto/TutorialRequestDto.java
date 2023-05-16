@@ -1,10 +1,12 @@
 package com.codekul.spring5Apr.jpa.dto;
 
+import com.codekul.spring5Apr.jpa.entity.Tag;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,4 +24,6 @@ public class TutorialRequestDto {
     private String subject;
 
     private TutorialDetailsRequestDto tutorialDetails;
+
+    private List<Tag> tags;
 }

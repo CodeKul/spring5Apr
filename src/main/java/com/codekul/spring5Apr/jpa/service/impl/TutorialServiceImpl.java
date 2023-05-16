@@ -2,8 +2,10 @@ package com.codekul.spring5Apr.jpa.service.impl;
 
 import com.codekul.spring5Apr.jpa.dto.TutorialDetailsRequestDto;
 import com.codekul.spring5Apr.jpa.dto.TutorialRequestDto;
+import com.codekul.spring5Apr.jpa.entity.Tag;
 import com.codekul.spring5Apr.jpa.entity.Tutorial;
 import com.codekul.spring5Apr.jpa.entity.TutorialDetails;
+import com.codekul.spring5Apr.jpa.repository.TagRepository;
 import com.codekul.spring5Apr.jpa.repository.TutorialDetailsRepository;
 import com.codekul.spring5Apr.jpa.repository.TutorialRepository;
 import com.codekul.spring5Apr.jpa.service.TutorialService;
@@ -19,6 +21,8 @@ public class TutorialServiceImpl implements TutorialService {
     private TutorialRepository tutorialRepository;
     @Autowired
     private TutorialDetailsRepository tutorialDetailsRepository;
+    @Autowired
+    private TagRepository tagRepository;
 
 
     @Override
@@ -83,5 +87,10 @@ public class TutorialServiceImpl implements TutorialService {
             return "Record deleted successfully";
         }
         return "Record with given id "+tutorialId + " does not exists";
+    }
+
+    @Override
+    public void saveTutorialWithTags(Tutorial tutorial) {
+        tutorialRepository.save(tutorial);
     }
 }

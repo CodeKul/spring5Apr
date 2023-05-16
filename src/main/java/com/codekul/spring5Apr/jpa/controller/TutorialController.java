@@ -71,4 +71,11 @@ public class TutorialController {
     public ResponseEntity<?> deleteTutorial(@PathVariable Long tutorialId){
         return ResponseEntity.ok(tutorialService.deleteTutorial(tutorialId));
     }
+
+
+    @PostMapping("/saveTutorialWithTags")
+    public String saveTutorialWithTags(@Valid @RequestBody Tutorial tutorial){
+        tutorialService.saveTutorialWithTags(tutorial);
+        return "Record saved successfully";
+    }
 }

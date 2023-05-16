@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -24,4 +25,10 @@ public class Tutorial {
 
     @OneToMany(mappedBy = "tutorial",fetch = FetchType.EAGER)
     private List<Comment> comments;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "tutorial_tags",
+            joinColumns = {@JoinColumn(name = "tutorial_id")},
+    inverseJoinColumns={@JoinColumn(name = "tag_id")})
+    private Set<Tag> tags;
 }
