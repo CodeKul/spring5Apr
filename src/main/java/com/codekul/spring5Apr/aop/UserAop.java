@@ -1,15 +1,22 @@
 package com.codekul.spring5Apr.aop;
 
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 @Aspect
-@Configuration
+@Component
 public class UserAop {
 
-    @Before("execution(* com.codekul.spring5Apr.jpa.controller.UserController.saveUser(..))") // pointcut expression
-    public void loginActivity(){
-        System.out.println("login activity");
+    @Before("execution(* com.codekul.spring5Apr.jpa.controller.UserController.login(..))") // pointcut expression
+    public void beforeLoginActivity(){
+        System.out.println("before login activity");
     }
+
+    @After("execution(* com.codekul.spring5Apr.jpa.controller.UserController.login(..))") // pointcut expression
+    public void afterLoginActivity(){
+        System.out.println("after login activity");
+    }
+
 }

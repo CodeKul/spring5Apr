@@ -20,7 +20,7 @@ public class UserController {
     @GetMapping
     public ResponseEntity<?> login(@RequestParam String username,
                                    @RequestParam String password){
-      ;
+        System.out.println("in login service");
         return ResponseEntity.ok(  userService.login(username, password));
     }
 }
