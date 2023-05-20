@@ -1,0 +1,42 @@
+- Aspect Oriented Programming
+- major feature
+- helps in breaking down the logic of the program into several distinct parts called as concerns
+- cross cutting concerns is the functions which span multiple points of an application
+- cross cutting concerns help in increasing modularity & separate it from the business logic of an application
+
+Need for Spring AOP
+- provides pluggable way of dynamically adding additional concern before, after or around the actual logic
+
+Terminologies:
+1. Aspect
+2. Join Point
+	- a point during the execution of a program, such as a method or handling of an exception
+	- a specific point in application such as method execution, exception handling, changing object variable values.
+	- represents a method execution
+3. Advice
+	- action taken either before or after the execution of method
+	- piece of code
+4. PointCut
+	- basically those JoinPoints where we can put our advice
+	- subset of JoinPoints
+	- expression that are matched with join points to determine whether advice needs to be executed or not.
+	- Spring framework uses the AspectJ pointcut expression language
+
+Types of Advice
+1. Before
+	- run the advice before the execution of method
+2. After
+	- run the advice after the execution of method regardless of the outcome
+3. After-returning
+	- run the advice after the execution of method only after the successful completion of the method
+4. After-throwing
+	- run the advice after the execution of method only if the method exits throwing an exception
+5. Around
+	- run the advice before & after advice method
+	- most important & powerful advice
+
+
+Steps:
+1. Add AOP dependency
+2.
+
