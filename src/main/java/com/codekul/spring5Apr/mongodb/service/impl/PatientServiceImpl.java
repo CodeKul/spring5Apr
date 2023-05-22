@@ -33,4 +33,9 @@ public class PatientServiceImpl implements PatientService {
     public List<Patient> searchByFirstNameAndLastName(String fName, String lName) {
         return patientRepository.findByFirstNameAndLastName(fName, lName);
     }
+
+    @Override
+    public List<Patient> searchPatient(String searchString) {
+        return patientRepository.searchPatient(searchString);
+    }
 }

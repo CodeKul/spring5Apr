@@ -14,4 +14,7 @@ public interface PatientRepository extends MongoRepository<Patient,String> {
     @Query("{$and:[{firstName:?0},{lastName:?1}]}")
     List<Patient> findByFirstNameAndLastName(String fname,String lname);
 
+    @Query(value = "{$text:{$search:?0}}",fields = "{'_id':0,'birthDate':0}")
+    List<Patient> searchPatient(String searchString);
+
 }

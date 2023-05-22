@@ -27,4 +27,10 @@ public class PatientController {
                                                           @RequestParam String lname){
         return ResponseEntity.ok(patientService.searchByFirstNameAndLastName(fname,lname));
     }
+
+    @GetMapping("/searchPatient")
+    public ResponseEntity<?> searchPatient(@RequestParam String searchString){
+        return ResponseEntity.ok(patientService.searchPatient(searchString));
+
+    }
 }

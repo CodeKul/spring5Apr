@@ -9,4 +9,7 @@ public interface PatientService {
 
     List<Patient> searchByFirstName(String fName);
     List<Patient> searchByFirstNameAndLastName(String fName,String lName);
+
+    List<Patient> searchPatient(String searchString);
+
 }
