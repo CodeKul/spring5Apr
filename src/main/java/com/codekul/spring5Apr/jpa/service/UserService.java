@@ -5,4 +5,6 @@ import com.codekul.spring5Apr.jpa.entity.User;
 public interface UserService {
     void saveUser(User user);
     String login(String username,String password);
+
+    User getUserById(Long userId);
 }

@@ -23,4 +23,9 @@ public class UserController {
         System.out.println("in login service");
         return ResponseEntity.ok(  userService.login(username, password));
     }
+
+    @GetMapping("/getUserById/{userId}")
+    public User getUserById(@PathVariable Long userId){
+        return userService.getUserById(userId);
+    }
 }

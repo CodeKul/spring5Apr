@@ -28,4 +28,9 @@ public class UserServiceImpl implements UserService {
             return "Invalid Credentials";
         }
     }
+
+    @Override
+    public User getUserById(Long userId) {
+        return userRepository.findById(userId).get();
+    }
 }
